@@ -1,16 +1,9 @@
 import React,{useState} from 'react'
 import { Toaster, toast } from 'sonner'
+import {referFriend} from '../Services/Refer'
+
 const Modal = ({visible,handlevisible}) => {
 
-    const [passwordvisible,setpassVisible]=useState(false)
-  const [confirmvisible,setconfirmVisible]=useState(false)
-
-  function togglePassVisible(){
-      setpassVisible(!passwordvisible);
-  }
-  function toggleConfirmVisible(){
-    setconfirmVisible(!confirmvisible);
-}
 //const user = sessionStorage.getItem('signupdata');
 const[name,setName]=useState('')
 const[fname,setFName]=useState('')
@@ -36,8 +29,24 @@ async function submit(){
     email:email,
     femail:femail
   }
-  console.log(referalData)
-  handlevisible(visible)
+  try {
+    const resp=await referFriend(referalData)
+    if(resp.msg=="CodeAdded"){
+      //console.log(resp.code)
+      toast.success('Referal Successful')
+      handlevisible(visible)
+    }
+    else if(resp.msg=="Referral code already exists"){
+      toast.error('Code Already exisits')
+    }
+    else{
+      toast.error(resp.msg)
+    }
+  } catch (error) {
+    //toast.error(error)
+  }
+  //console.log(referalData)
+ 
     
 }
 }
