@@ -8,7 +8,7 @@ const Home = () => {
 
   
   return (
-    <div className=''>
+    <div className='max-w-screen'>
       <Header/>
       <Navbar/>
       <Nav/>

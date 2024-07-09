@@ -1,6 +1,6 @@
 export const referFriend=async(refData)=>{
     try {
-        const response=await fetch('http://localhost:3000/ref/addref',{
+        const response=await fetch('https://accredian-backend-task-kvl1.onrender.com/ref/addref',{
            method:'POST',
             headers:{
                 'Content-Type': 'application/json',

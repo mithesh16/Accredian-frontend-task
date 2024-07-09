@@ -31,8 +31,8 @@ async function submit(){
   }
   try {
     const resp=await referFriend(referalData)
+    toast('Sending Referal')
     if(resp.msg=="CodeAdded"){
-      //console.log(resp.code)
       toast.success('Referal Successful')
       handlevisible(visible)
     }
@@ -53,16 +53,16 @@ async function submit(){
     if (!visible) return null;
     
     return (
-        <div className='flex items-center justify-center fixed inset-2 bg-transparent backdrop-blur-sm  '>
-              <div class="bg-white shadow-md  border-2 border-black w-1/4">
-                <div className='shadow-lg pt-5 pb-5'>
+        <div className='flex items-center justify-center w-full fixed inset-2 bg-transparent backdrop-blur-sm  '>
+              <div class="bg-white shadow-md  border-2 border-black w-[70%] md:w-1/2 lg:w-1/3 xl:w-1/4">
+                <div className='shadow-lg py-5 px-5 '>
                 <button className=' absolute ml-5 text-white text-center w-8 h-8 rounded-3xl bg-dblue' onClick={()=>handlevisible(visible)}>X</button>
                 <h3 className="text-2xl font-bold bg-inherit text-dblue text-center">Refer a Friend ! </h3>
       <form className='mt-5 lg:mt-10 flex flex-col gap-6 lg:px-8'> 
-        <input type='text' placeholder='Your Name' className='border-b p-2 ' onChange={(e)=>setName(e.target.value)} defaultValue={name}/>
-        <input type='mail' placeholder='Your Email' className='border-b p-2' onChange={(e)=>setEmail(e.target.value)} defaultValue={email}/>
-        <input type='text' placeholder='Friend Name'  className='border-b p-2'onChange={(e)=>setFName(e.target.value)} defaultValue={fname}/>
-        <input type='mail' placeholder='Friend Email' className='border-b p-2' onChange={(e)=>setFEmail(e.target.value)} defaultValue={femail}/>
+        <input type='text' required placeholder='Your Name*' className='border-b p-2 ' onChange={(e)=>setName(e.target.value)} defaultValue={name}/>
+        <input type='mail' required placeholder='Your Email*' className='border-b p-2' onChange={(e)=>setEmail(e.target.value)} defaultValue={email}/>
+        <input type='text' required placeholder='Referee Name*'  className='border-b p-2'onChange={(e)=>setFName(e.target.value)} defaultValue={fname}/>
+        <input type='mail' required placeholder='Referee Email*' className='border-b p-2' onChange={(e)=>setFEmail(e.target.value)} defaultValue={femail}/>
         <button type='submit' className='w-full bg-dblue text-white text-lg rounded-3xl font-bold py-3' onClick={(e)=>{
           e.preventDefault()
           submit()}}> Submit</button>

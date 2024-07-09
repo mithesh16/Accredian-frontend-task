@@ -14,11 +14,11 @@ const Hero = () => {
   return (
     <div className='lg:px-52 w-full'>
         
-        <div className='flex drop-shadow-2xl py-3  rounded-2xl w-full h-[490px] p-5 items-center bg-lblue '>
+        <div className='flex drop-shadow-2xl py-3  rounded-2xl w-full h-1/2 md:h-[90%] p-5 items-center justify-center bg-lblue '>
             {/* <img src={money} className='absolute w-[157px] h-[87px] left-[280px] top-[356px] bg-transparent'/>
             <img src={money} className='absolute w-[157px] h-[87px] left-[0px] top-[-10px] rotate-90 bg-transparent'/> */}
             
-            <div className='w-[40%] bg-inherit px-10 space-y-5'>
+            <div className=' md:w-[40%] bg-inherit px-10 space-y-5 items-center'>
             <div className='bg-inherit'>
                 <h1 className='text-[50px] font-bold font-["roboto"] bg-inherit leading-none'>Let's Learn <br/>& Earn</h1> 
             </div>
@@ -33,7 +33,7 @@ const Hero = () => {
 
             </div>
             </div>
-            <div className='w-1/2 bg-inherit h-full'>
+            <div className='hidden md:flex w-1/2 bg-inherit h-full'>
             <div className='bg-inherit flex justify-start items-center h-full'>
                 {/* <img src={money} className='absolute w-[157px] h-[87px] left-[500px] top-[50px] rotate-90 bg-transparent'/> */}
             <img src={hero} alt='hero' className='max-w-full h-auto object-contain bg-inherit'/>
