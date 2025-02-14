@@ -3,7 +3,7 @@
 
 ## Live Demo
 
-https://accredianreferpage.netlify.app/
+https://accredian-frontend-task-4al8.onrender.com
 
 ## Run Locally
 
