@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.png'
+import { MdOutlineMenu } from 'react-icons/md'
+import { ChevronRight } from 'lucide-react'
 const Navbar = () => {
   return (
     <div className='px-10 xl:px-52 py-5'>
@@ -7,7 +9,7 @@ const Navbar = () => {
             <div className='flex items-center justify-center space-x-2 lg:space-x-5'>
             <img src={logo} alt='logo' className='w-32 h-9 '/>
             <div class="relative inline-block text-left">
-    <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-dblue px-3 py-2 text-sm font-light text-white" id="menu-button">
+    <button type="button" class="hidden md:inline-flex w-full justify-center gap-x-1.5 rounded-md bg-dblue px-3 py-2 text-sm font-light text-white" id="menu-button">
       Courses
       <svg class="-mr-1 h-5 w-5 text-white bg-transparent" viewBox="0 0 20 20" fill="white" aria-hidden="true">
         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -26,8 +28,17 @@ const Navbar = () => {
                   </div>
               
                     <div className='hidden md:flex items-center justify-end space-x-2'>
-                    <button className='bg-grey text-black px-4 py-2 rounded-lg'>Login</button>
-                    <button className='bg-dblue text-white px-4 py-2 rounded-lg'>Try for free</button>
+                    <button className='bg-grey text-black px-4 py-2 rounded-lg cursor-default'><a href='https://accredian.com/login' target='_blank'>Login</a></button>
+                    <button className='bg-dblue text-white px-4 py-2 rounded-lg cursor-default'><a href='https://trial.accredian.com/' target='_blank'>Try for free</a></button>
+                    </div>
+                    <div className='md:hidden flex items-center justify-center'>
+                    <button type="button" class="md:hidden inline-flex w-full justify-center gap-x-1.5 rounded-md bg-dblue px-3 py-2 text-sm font-light text-white" id="menu-button">
+      Explore
+      <ChevronRight size={20}/>
+    </button>
+                    </div>
+                    <div className='md:hidden flex items-center justify-center'>
+                    <MdOutlineMenu size={35} />
                     </div>
                     
                 </ul>

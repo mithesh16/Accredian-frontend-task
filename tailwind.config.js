@@ -11,7 +11,12 @@ export default {
       blue:'#DDEAFC',
       lblue:"#EEF5FF",
       dblue:'#1A73E8',
-      grey:'#94A3B833'
+      mblue:'#609CEB ',
+      grey:'#94A3B833',
+      tblue:'#AFCEF7',
+      tgrey:'#F8FBFF',
+      bordergray:'#CACACA'
+
     },
     extend: {},
   },
